@@ -181,3 +181,5 @@ print(paste('mean = ', mean(my1000$k36),' sd = ',sd(my1000$k36)))
 
 ```
 
+By going from a sample size of 9 to 36 we were able to further analysis the Central Limit Theorem. We have demonstrated that the larger the sample size became the more the graphs transitioned into uni-modal. With this sample size of 36 the graphs averaged together with a close to perfect even distribution.
+
