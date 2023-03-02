@@ -1,6 +1,6 @@
 ---
 title: "CLT_WUP"
-author: "Your Name"
+author: "Valerie Rodriguez"
 output: 
   html_document:
     number_sections: true
@@ -41,6 +41,7 @@ p+ geom_vline(aes(xintercept=mean(kkardashtemp)),
             color="blue", linetype="dashed", size=1)
 print(paste('mean = ', mean(my1000$kkardashtemp),' sd = ',sd(my1000$kkardashtemp)))
 ```
+
 
 ```{r}
 numb=2
