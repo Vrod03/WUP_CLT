@@ -115,22 +115,69 @@ In the beginning we had a bi-modal distribution graph. Along with where the grap
 
 
 ```{r}
-numb = 4
+numb = 16
 Hdata = Homers_data[sample(1:1000,size=numb*1000, replace=T),"kkardashtemp"]
 mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
 x.avg <- apply(mdata,1,mean)
-my1000$k4 = x.avg
+my1000$k16 = x.avg
 
 
-p <- ggplot(my1000, aes(x=k4),col=sex) + 
+p <- ggplot(my1000, aes(x=k16),col=sex) + 
   geom_density() +
 
 # Add mean line
- geom_vline(aes(xintercept=mean(k9)),
+ geom_vline(aes(xintercept=mean(k16)),
             color="blue", linetype="dashed", size=1)
-p + ggtitle("n = 4") +
+p + ggtitle("n = 16") +
   xlab("temperature") + ylab(" density")
 
-print(paste('mean = ', mean(my1000$k4),' sd = ',sd(my1000$k4)))
+print(paste('mean = ', mean(my1000$k16),' sd = ',sd(my1000$k16)))
 
 ```
+
+As the n value gets bigger the graph increasingly becomes more uni-modal. This is when the 16 samples are averaged together. 
+
+```{r}
+numb = 25
+Hdata = Homers_data[sample(1:1000,size=numb*1000, replace=T),"kkardashtemp"]
+mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
+x.avg <- apply(mdata,1,mean)
+my1000$k25 = x.avg
+
+
+p <- ggplot(my1000, aes(x=k25),col=sex) + 
+  geom_density() +
+
+# Add mean line
+ geom_vline(aes(xintercept=mean(k25)),
+            color="blue", linetype="dashed", size=1)
+p + ggtitle("n = 25") +
+  xlab("temperature") + ylab(" density")
+
+print(paste('mean = ', mean(my1000$k25),' sd = ',sd(my1000$k25)))
+
+```
+
+Now with 25 samples averaged together the graphs peak is completely uni-modal in comparison to the graph with smaller sample sizes.
+
+```{r}
+numb = 36
+Hdata = Homers_data[sample(1:1000,size=numb*1000, replace=T),"kkardashtemp"]
+mdata  <-matrix(Hdata,nrow=1000,ncol=numb)
+x.avg <- apply(mdata,1,mean)
+my1000$k36 = x.avg
+
+
+p <- ggplot(my1000, aes(x=k36),col=sex) + 
+  geom_density() +
+
+# Add mean line
+ geom_vline(aes(xintercept=mean(k36)),
+            color="blue", linetype="dashed", size=1)
+p + ggtitle("n = 36") +
+  xlab("temperature") + ylab(" density")
+
+print(paste('mean = ', mean(my1000$k36),' sd = ',sd(my1000$k36)))
+
+```
+
